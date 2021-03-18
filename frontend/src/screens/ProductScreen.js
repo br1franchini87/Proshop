@@ -15,13 +15,14 @@ const ProductScreen = ({ match }) => {
             setProduct(data);
         };
         fetchProduct();
-    }, []);
+    }, [match]);
 
     return (
         <div>
-            <Link className='btn btn-info my-3' to='/'>
+            <Link className='btn btn-outline-primary my-3' to='/'>
                 Go Back
             </Link>
+
             <Row>
                 <Col md={6}>
                     <Image src={product.image} alt={product.name} fluid />
@@ -66,7 +67,7 @@ const ProductScreen = ({ match }) => {
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <Button
-                                    className='btn-block btn-secondary'
+                                    className='btn-block btn-warning'
                                     type='button'
                                     disabled={product.countInStock === 0}
                                 >
